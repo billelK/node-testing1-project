@@ -1,7 +1,7 @@
 const utils = require('./index')
 
 describe('[Exercise 1] trimProperties', () => {
-  test('[1] returns an object with the properties trimmed', () => {
+  test.only('[1] returns an object with the properties trimmed', () => {
     // EXAMPLE
     const input = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
     const expected = { foo: 'foo', bar: 'bar', baz: 'baz' }
@@ -21,7 +21,7 @@ describe('[Exercise 3] findLargestInteger', () => {
 })
 
 describe('[Exercise 4] Counter', () => {
-  let counter
+  let counter 
   beforeEach(() => {
     counter = new utils.Counter(3) // each test must start with a fresh couter
   })

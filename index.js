@@ -8,7 +8,19 @@
  */
 function trimProperties(obj) {
   // ✨ implement
+  let newObj = {}
+  Object.entries(obj).forEach(entrie => {
+    for(let i=0; i< entrie.length; i++) {
+      if(i === 0) {
+        newObj[`${entrie[i]}`] = entrie[i+1].trim()
+      }
+    }
+  })
+  console.log(newObj);
+  
+  return newObj
 }
+// trimProperties({ foo: '  foo ', bar: 'bar ', baz: ' baz' })
 
 /**
  * [Exercise 2] trimPropertiesMutation trims in place the properties of an object

@@ -4,8 +4,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "test": "cross-env NODE_ENV=testing jest --verbose"
+    "test": "cross-env NODE_ENV=testing jest --verbose --watchAll"
   },
+  
   "devDependencies": {
     "@types/jest": "^27.5.0",
     "cross-env": "^7.0.3",
@@ -13,6 +14,7 @@
     "jest": "^28.1.0",
     "nodemon": "^2.0.16"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BloomInstituteOfTechnology/node-testing1-project.git"
