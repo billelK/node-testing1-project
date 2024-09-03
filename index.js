@@ -16,11 +16,8 @@ function trimProperties(obj) {
       }
     }
   })
-  console.log(newObj);
-  
   return newObj
 }
-// trimProperties({ foo: '  foo ', bar: 'bar ', baz: ' baz' })
 
 /**
  * [Exercise 2] trimPropertiesMutation trims in place the properties of an object
@@ -32,6 +29,14 @@ function trimProperties(obj) {
  */
 function trimPropertiesMutation(obj) {
   // ✨ implement
+  Object.entries(obj).forEach(entrie => {
+    for(let i=0; i< entrie.length; i++) {
+      if(i === 0) {
+        obj[`${entrie[i]}`] = entrie[i+1].trim()
+      }
+    }
+  })
+  return obj
 }
 
 /**
@@ -44,7 +49,13 @@ function trimPropertiesMutation(obj) {
  */
 function findLargestInteger(integers) {
   // ✨ implement
+  let largest = integers[0].integer
+  for(let i=1; i< integers.length; i++) {
+    if(largest < integers[i].integer) largest = integers[i].integer 
+  }
+  return largest
 }
+
 
 class Counter {
   /**
@@ -53,6 +64,9 @@ class Counter {
    */
   constructor(initialNumber) {
     // ✨ initialize whatever properties are needed
+    this.isFirstTime = true
+    this.initialNumber = initialNumber
+    this.current = initialNumber
   }
 
   /**
@@ -69,9 +83,16 @@ class Counter {
    */
   countDown() {
     // ✨ implement
+    if (this.isFirstTime) {
+      this.isFirstTime = false
+      return this.initialNumber
+    } else {
+      this.current -= 1
+      if(this.current > 0) return this.current
+      else return 0
+    }
   }
 }
-
 class Seasons {
   /**
    * [Exercise 5A] Seasons creates a seasons object
