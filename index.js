@@ -151,6 +151,9 @@ class Car {
     this.tank = tankSize // car initiazes full of gas
     // ✨ initialize whatever other properties are needed\
     this.name = name
+    this.mpg = mpg
+    // this.gazLeft = mpg
+    this.maxMiles = tankSize * mpg
   }
 
   /**
@@ -168,8 +171,22 @@ class Car {
    */
   drive(distance) {
     // ✨ implement
-    return this.odometer += distance 
+    
+    
+    if(this.maxMiles - distance > 0) {
+      this.maxMiles -= distance
+      return this.odometer += distance 
+    } else {
+      if(this.maxMiles === 0) {
+        return  this.odometer
+      } else {
+        const carCanDive = distance - this.maxMiles
+        this.maxMiles = 0
+        return this.odometer += carCanDive 
+      }
+    }
   }
+  
 
   /**
    * [Exercise 6C] Adds gallons to the tank
@@ -186,6 +203,7 @@ class Car {
     // ✨ implement
   }
 }
+
 
 /**
  * [Exercise 7] Asynchronously resolves whether a number is even
