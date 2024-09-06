@@ -112,15 +112,17 @@ describe('[Exercise 6] Car', () => {
     focus = new utils.Car('focus', 20, 30) // each test must start with a fresh car
   })
   test('[15] driving the car returns the updated odometer', () => {
-    expect(focus.drive(10)).toEqual(10)
-  })
-  test('[16] driving the car uses gas', () => {
     expect(focus.drive(100)).toEqual(100)
     expect(focus.drive(100)).toEqual(200)
     expect(focus.drive(100)).toEqual(300)
     expect(focus.drive(200)).toEqual(500)
     expect(focus.drive(200)).toEqual(600)
     expect(focus.drive(200)).toEqual(600)
+  })
+  test('[16] driving the car uses gas', () => {
+    expect(focus.drive(600)).toEqual(600)
+    expect(focus.drive(1)).toEqual(600)
+    expect(focus.maxMiles).toBe(0)
   })
   test('[17] refueling allows to keep driving', () => {
     expect(focus.drive(600)).toEqual(600)
