@@ -199,8 +199,17 @@ class Car {
    */
   refuel(gallons) {
     // ✨ implement
-    const carCanDrive = gallons * this.mpg
-    return carCanDrive 
+    if(this.maxMiles !== 600) {
+      if(gallons >= this.tank) {
+        this.maxMiles = 600
+        return this.maxMiles
+      } else {
+        this.maxMiles += gallons * this.mpg
+        return this.maxMiles 
+      }
+    } else {
+      return this.maxMiles
+    }
   }
 }
 
