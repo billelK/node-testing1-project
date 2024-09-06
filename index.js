@@ -99,6 +99,14 @@ class Seasons {
    */
   constructor() {
     // ✨ initialize whatever properties are needed
+    this.isFirstTime = 1
+    this.seasons = [
+      "summer",
+      "fall",
+      "winter",
+      "spring"
+    ]
+    this.curentSeason = this.seasons[0]
   }
 
   /**
@@ -115,6 +123,12 @@ class Seasons {
    */
   next() {
     // ✨ implement
+    if (this.isFirstTime) {
+      this.isFirstTime = 0
+      return this.curentSeason 
+    } else { 
+      return  this.seasons[this.seasons.indexOf(this.curentSeason) + 1]
+    }
   }
 }
 
