@@ -106,7 +106,7 @@ class Seasons {
       "winter",
       "spring"
     ]
-    this.curentSeason = this.seasons[0]
+    this.currentSeason = this.seasons[0]
   }
 
   /**
@@ -125,12 +125,19 @@ class Seasons {
     // ✨ implement
     if (this.isFirstTime) {
       this.isFirstTime = 0
-      return this.curentSeason 
+      return this.currentSeason 
     } else { 
-      return  this.seasons[this.seasons.indexOf(this.curentSeason) + 1]
+      this.currentSeason = this.seasons[this.seasons.indexOf(this.currentSeason) + 1]
+      return this.currentSeason
     }
   }
 }
+const seasons = new Seasons()
+console.log(seasons.next());
+console.log(seasons.next())
+console.log(seasons.next())
+console.log(seasons.next())
+console.log(seasons.next())
 
 class Car {
   /**
