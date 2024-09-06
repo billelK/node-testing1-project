@@ -97,7 +97,13 @@ describe('[Exercise 5] Seasons', () => {
     expect(seasons.next()).toEqual("spring")
     expect(seasons.next()).toEqual("summer")
   })
-  // test('[14] the 40th call of seasons.next returns "spring"', () => {})
+  test('[14] the 40th call of seasons.next returns "spring"', () => {
+    let current 
+    for(let i=1; i<= 40; i++ ){
+      current = seasons.next()
+    }
+    expect(current).toEqual("spring")
+  })
 })
 
 describe('[Exercise 6] Car', () => {
