@@ -127,17 +127,17 @@ class Seasons {
       this.isFirstTime = 0
       return this.currentSeason 
     } else { 
-      this.currentSeason = this.seasons[this.seasons.indexOf(this.currentSeason) + 1]
+      const nextIndex = this.seasons.indexOf(this.currentSeason) + 1
+      if(this.seasons[nextIndex]) {
+        this.currentSeason = this.seasons[nextIndex]
+      } else {
+        this.currentSeason = this.seasons[0]
+      }
       return this.currentSeason
     }
   }
 }
-const seasons = new Seasons()
-console.log(seasons.next());
-console.log(seasons.next())
-console.log(seasons.next())
-console.log(seasons.next())
-console.log(seasons.next())
+
 
 class Car {
   /**
