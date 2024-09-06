@@ -176,7 +176,7 @@ class Car {
         this.maxMiles -= distance
         return this.odometer += distance
       } else {
-        const carCanDrive = distance - this.maxMiles
+        const carCanDrive = this.maxMiles
         this.maxMiles = 0
         return this.odometer += carCanDrive
       }
