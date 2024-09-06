@@ -171,19 +171,17 @@ class Car {
    */
   drive(distance) {
     // ✨ implement
-    
-    
-    if(this.maxMiles - distance > 0) {
-      this.maxMiles -= distance
-      return this.odometer += distance 
-    } else {
-      if(this.maxMiles === 0) {
-        return  this.odometer
+    if (this.maxMiles > 0) {
+      if(this.maxMiles - distance >= 0) {
+        this.maxMiles -= distance
+        return this.odometer += distance
       } else {
-        const carCanDive = distance - this.maxMiles
+        const carCanDrive = distance - this.maxMiles
         this.maxMiles = 0
-        return this.odometer += carCanDive 
+        return this.odometer += carCanDrive
       }
+    } else {
+      return this.odometer 
     }
   }
   
@@ -201,6 +199,8 @@ class Car {
    */
   refuel(gallons) {
     // ✨ implement
+    const carCanDrive = gallons * this.mpg
+    return carCanDrive 
   }
 }
 
